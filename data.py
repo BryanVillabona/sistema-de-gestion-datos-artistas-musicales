@@ -4,28 +4,19 @@ paises = {}
 generos = {}
 artistas = {}
 
-def cargar_datos(archivo):
-    datos = {}
-    try:
-        with open(archivo, "r") as file:
-            datos = json.load(file)
-    except Exception:
-        print("No se pudo cargar datos")
+import json
 
-        datos = None
-    
-    if archivo == "paises.json":
-        paises.update(datos)
-    elif archivo == "artistas.json":
-        artistas.update(datos)
-    elif archivo == "generos.json":
-        generos.update(datos)
+def cargar_datos(archivo):
+    try:
+        with open(archivo, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except Exception as e:
+        print(f"No se pudo cargar datos de {archivo}. Error: {e}")
+        return None
 
 def guardar_datos(datos, archivo):
     try:
-        datos_a_guardar = json.dumps(datos, indent=4)
-        with open(archivo, "w") as file:
-            file.write(datos_a_guardar)
-
-    except Exception:
-        print("No se pudo guardar datos")
+        with open(archivo, "w", encoding="utf-8") as file:
+            json.dump(datos, file, indent=4, ensure_ascii=False)
+    except Exception as e:
+        print(f"No se pudo guardar datos en {archivo}. Error: {e}")
