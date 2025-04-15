@@ -1,1 +1,8 @@
-{}
+{
+    "P-001": {
+        "Codigo_Pais": "P-001",
+        "Nombre_Pais": "Colombia",
+        "ISO": "CO",
+        "ISO3": "COL"
+    }
+}

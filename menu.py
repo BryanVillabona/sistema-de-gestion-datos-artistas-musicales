@@ -25,7 +25,7 @@ def mostrar_menu_principal():
 def mostrar_menu_datos_artistas():
     return print(menu_datos_artistas)
 
-def menu_principal_mostrar():
+def menu_principal_mostrar(paises):
     
     while True:
         mostrar_menu_principal()
@@ -34,7 +34,7 @@ def menu_principal_mostrar():
             case 1:
                 artistas_menu()
             case 2:
-                registrar_pais()
+                registrar_pais(paises)
             case 3:
                 registrar_genero()
             case 4:
